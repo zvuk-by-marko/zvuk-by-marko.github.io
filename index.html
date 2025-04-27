@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zvuk by Marko - Početna stranica za iznajmljivanje kvalitetnih zvučnika i rasvjete po pristupačnim cijenama.">
+    <title>Zvuk by Marko - Početna - Iznajmljivanje Opreme</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@material/web@latest/dist/material.js"></script>
+
+    <style>
+        /* === OSNOVNI STILOVI (POTREBNI NA SVIM STRANICAMA) === */
+        :root {
+            /* Dark Theme Palette */
+            --dark-bg-start: #181a20; --dark-bg-end: #121214; --md-sys-color-surface: #1F1F1F; --md-sys-color-surface-container-high: #2C2C2C; --header-bg-rgb: 40, 40, 45; --header-bg-opacity: 0.9; --md-sys-color-on-background: #E1E1E1; --md-sys-color-on-surface: #FFFFFF; --md-sys-color-on-surface-variant: #C1C1C1; --md-sys-color-primary: #79B8F3; --md-sys-color-on-primary: #00325A; --md-sys-color-outline: #4A4A4A; --md-sys-color-outline-variant: #3A3A3A; --md-sys-color-shadow: rgba(0, 0, 0, 0.3);
+            /* Font */
+            --md-ref-typeface-plain: 'Poppins', sans-serif; --md-ref-typeface-brand: 'Poppins', sans-serif; --md-ref-typeface-weight-regular: 400; --md-ref-typeface-weight-medium: 500; --md-ref-typeface-weight-bold: 700;
+            /* Roundness */
+            --standard-border-radius: 16px; --item-border-radius: 12px; --button-border-radius: 20px; --image-border-radius: 8px;
+            color-scheme: dark;
+        }
+        body { font-family: var(--md-ref-typeface-plain); background: linear-gradient(135deg, var(--dark-bg-start), var(--dark-bg-end)); background-attachment: fixed; color: var(--md-sys-color-on-background); margin: 0; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--md-ref-typeface-brand); color: var(--md-sys-color-on-surface); font-weight: var(--md-ref-typeface-weight-medium); }
+        a { color: var(--md-sys-color-primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        /* Header Styling */
+        .app-header { background-color: rgba(var(--header-bg-rgb), var(--header-bg-opacity)); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(12px); padding: 24px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(var(--md-sys-color-outline), 0.5); flex-shrink: 0; }
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        .header-logo { height: 40px; width: auto; display: block; }
+        .header-title { font-size: 1.6em; font-weight: var(--md-ref-typeface-weight-bold); color: var(--md-sys-color-primary); margin: 0; }
+        .header-nav nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .header-nav nav ul li a { font-weight: var(--md-ref-typeface-weight-medium); padding: 10px 16px; border-radius: var(--button-border-radius); transition: background-color 0.2s ease; }
+        .header-nav nav ul li a:hover { background-color: rgba(121, 184, 243, 0.15); text-decoration: none; }
+        /* Main Content Styling */
+        main { padding: 20px; max-width: 1000px; margin: 20px auto; flex-grow: 1; width: 100%; box-sizing: border-box; }
+        section { margin-bottom: 30px; padding: 20px 10px; border-radius: var(--standard-border-radius); }
+        section h2 { margin-top: 0; margin-bottom: 35px; padding-left: 10px; font-weight: var(--md-ref-typeface-weight-bold); font-size: 1.8em; text-align: center; }
+        /* Footer Styling */
+        footer { text-align: center; margin-top: auto; padding: 25px; font-size: 0.9em; color: var(--md-sys-color-on-surface-variant); border-top: 1px solid var(--md-sys-color-outline); background-color: var(--dark-bg-start); flex-shrink: 0; }
+        md-filled-button, md-outlined-button { margin-top: 10px; }
+        /* Material Symbols styling */
+         .material-symbols-outlined { vertical-align: middle; margin-right: 8px; font-size: 1.4em; color: var(--md-sys-color-primary); }
+
+        /* === STILOVI SPECIFIČNI ZA INDEX.HTML === */
+        /* Hero Section Styling */
+        #hero { background-image: url('assets/planine.jpg'); /* <-- UNESI PUTANJU! */ background-color: #333; background-size: cover; background-position: center center; min-height: 65vh; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: white; border-radius: 0 0 var(--standard-border-radius) var(--standard-border-radius); overflow: hidden; margin-bottom: 30px; flex-shrink: 0; }
+        #hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.55); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; padding: 20px; max-width: 800px; }
+        .hero-content h2 { font-weight: var(--md-ref-typeface-weight-bold); font-size: 3em; margin-bottom: 15px; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+        .hero-content p { font-size: 1.2em; margin-bottom: 10px; color: rgba(255, 255, 255, 0.9); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+        /* Item Styling */
+        .item { background-color: var(--md-sys-color-surface-container-high); padding: 20px; margin-bottom: 20px; border-radius: var(--item-border-radius); border: 1px solid var(--md-sys-color-outline-variant); display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .item img { width: 100px; height: 100px; object-fit: contain; border-radius: var(--image-border-radius); flex-shrink: 0; background-color: transparent; }
+        .item .item-content { flex-grow: 1; }
+        .item .item-content h3 { margin-top: 0; margin-bottom: 10px; color: var(--md-sys-color-primary); text-align: left; }
+        .item .item-content p { color: var(--md-sys-color-on-surface-variant); margin-bottom: 8px; text-align: left; }
+        .item .item-content strong { color: var(--md-sys-color-on-surface); font-weight: var(--md-ref-typeface-weight-medium); }
+        /* Brand Logos Section Styling */
+        .brand-logos { padding: 30px 0; background-color: rgba(var(--md-sys-color-surface), 0.5); border-radius: var(--standard-border-radius); margin-top: 40px; }
+        .brand-logos h2 { margin-bottom: 30px; color: var(--md-sys-color-on-surface-variant); }
+        .logo-scroll-container { overflow: hidden; position: relative; width: 100%; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%); }
+        .logo-track { display: flex; width: calc(150px * 6 * 2); animation: scrollLogos 35s linear infinite; will-change: transform; }
+        .logo-scroll-container:hover .logo-track { animation-play-state: paused; }
+        .logo-track img { height: 45px; width: auto; padding: 0 30px; filter: grayscale(80%) brightness(1.2); opacity: 0.8; transition: filter 0.3s ease, opacity 0.3s ease; }
+        .logo-track img:hover { filter: grayscale(0%) brightness(1); opacity: 1; }
+        @keyframes scrollLogos { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* === RESPONZIVNI STILOVI (POTREBNI NA SVIM STRANICAMA) === */
+         @media (max-width: 768px) {
+             .hero-content h2 { font-size: 2.5em; }
+             .hero-content p { font-size: 1.1em; }
+             #hero { min-height: 50vh; }
+         }
+        @media (max-width: 700px) {
+            .app-header { flex-direction: column; align-items: center; padding: 15px; gap: 10px; }
+             .header-left { justify-content: center; width: 100%; }
+            .header-nav nav ul { gap: 8px; justify-content: center; }
+             .header-nav nav ul li a { padding: 8px 12px; }
+        }
+        @media (max-width: 600px) {
+             main { padding: 10px; }
+             section { padding: 15px 5px; margin-bottom: 20px; }
+              section h2 { font-size: 1.6em; margin-bottom: 30px;}
+              .hero-content h2 { font-size: 2em; }
+              .hero-content p { font-size: 1em; }
+              #hero { min-height: 40vh; }
+             .item { padding: 15px; gap: 15px; }
+              .item img { width: 80px; height: 80px; }
+             .header-title { font-size: 1.3em; }
+             .header-logo { height: 30px; }
+              .logo-track { animation-duration: 25s; }
+              .logo-track img { height: 35px; padding: 0 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <img src="assets/ikona.png" alt="Logo Zvuk by Marko" class="header-logo">
+            <div class="header-title">Zvuk by Marko</div>
+        </div>
+        <div class="header-nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="#ponuda-opcenito">Ponuda</a></li> <li><a href="cjenik.html">Cjenik</a></li>   <li><a href="kontakt.html">Kontakt</a></li> </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Dobrodošli!</h2>
+            <p>Nudimo Vam vrhunsku kvalitetu zvuka i rasvjete po pristupačnim cijenama za nezaboravne događaje!</p>
+            <p>Profesionalna oprema za vaše događaje. Pružamo usluge ozvučenja i rasvjete za otvorene i zatvorene prostore kapaciteta do 250 osoba.</p>
+            <md-filled-button onclick="window.location.href='#ponuda-opcenito'" style="margin-top: 20px;">Pogledaj Ponudu</md-filled-button>
+        </div>
+    </section>
+
+    <main>
+        <section id="ponuda-opcenito">
+            <h2>Naša Ponuda Uključuje:</h2>
+            <ul>
+                <li>Pasivne zvučnike</li>
+                <li>Aktivne zvučnike</li>
+                <li>Subwoofere</li>
+                <li>Širok asortiman rasvjete</li>
+            </ul>
+        </section>
+
+        <section id="zvucnici">
+            <h2>Ponuda Zvučnika</h2>
+             <div class="item">
+                <img src="assets/behringer.png" alt="Aktivni Behringer Zvučnik" loading="lazy">
+                <div class="item-content">
+                    <h3>Aktivni Behringer Zvučnici</h3>
+                    <p><strong>Jačina:</strong> do 1000W</p>
+                    <p><strong>Kapacitet:</strong> Idealno za do 80 osoba</p>
+                    <p>Opis: Pouzdani aktivni zvučnici za jasnu reprodukciju zvuka.</p>
+                </div>
+            </div>
+             <div class="item">
+                <img src="assets/auna.png" alt="Pasivni Auna Pro Zvučnik" loading="lazy">
+                <div class="item-content">
+                    <h3>Pasivni Auna Pro Zvučnici</h3>
+                    <p><strong>Jačina:</strong> do 800W</p>
+                    <p><strong>Kapacitet:</strong> Idealno za do 120 osoba</p>
+                    <p>Opis: Snažni pasivni zvučnici za veće prostore ili glasnije događaje.</p>
+                </div>
+            </div>
+            <div class="item">
+                 <img src="assets/subwoofer.png" alt="Visokokvalitetni Subwoofer" loading="lazy">
+                 <div class="item-content">
+                    <h3>Visokokvalitetni Subwooferi</h3>
+                    <p><strong>Jačina:</strong> do 1300W</p>
+                    <p><strong>Kapacitet:</strong> Pokrivaju do 180 osoba</p>
+                    <p>Opis: Duboki i moćni bas za potpun doživljaj glazbe.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="assets/denver.png" alt="Denver Bluetooth Zvučnik" loading="lazy">
+                <div class="item-content">
+                    <h3>Denver Bluetooth Zvučnici</h3>
+                    <p><strong>Jačina:</strong> 500W</p>
+                    <p><strong>Kapacitet:</strong> Idealno za do 30 osoba</p>
+                    <p>Opis: Prijenosni i praktični Bluetooth zvučnici za manja okupljanja.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="rasvjeta">
+            <h2>Ponuda Rasvjete</h2>
+             <div class="item">
+                <img src="assets/par80w.png" alt="PAR Reflektor" loading="lazy">
+                 <div class="item-content">
+                    <h3>PAR Reflektori</h3>
+                    <p><strong>Jačina:</strong> 80W</p>
+                    <p>Opis: Klasični reflektori za osnovno osvjetljenje pozornice ili prostora.</p>
+                 </div>
+            </div>
+            <div class="item">
+                <img src="assets/par70w.png" alt="Pozadinski Reflektor" loading="lazy">
+                 <div class="item-content">
+                    <h3>Pozadinski Reflektori</h3>
+                    <p><strong>Jačina:</strong> do 70W</p>
+                    <p>Opis: Idealni za stvaranje ambijentalnog osvjetljenja ili bojanje zidova.</p>
+                 </div>
+            </div>
+             <div class="item">
+                 <img src="assets/movingheadwash.png" alt="Moving Head Wash Reflektor" loading="lazy">
+                 <div class="item-content">
+                    <h3>Moving Head Wash Reflektori</h3>
+                    <p><strong>Jačina:</strong> 120W</p>
+                    <p>Opis: Dinamična rasvjeta koja pokretom i bojama dočarava bolji ambijent u prostoru.</p>
+                 </div>
+            </div>
+        </section>
+
+        <section id="brendovi" class="brand-logos">
+             <h2>Brendovi Koje Koristimo</h2>
+             <div class="logo-scroll-container">
+                 <div class="logo-track">
+                     <img src="assets/behringer_logo.png" alt="Behringer Logo">
+                     <img src="assets/auna_logo.png" alt="Auna Pro Logo">
+                     <img src="assets/denver_logo.png" alt="Denver Logo">
+                     <img src="assets/behringer_logo.png" alt="Behringer Logo">
+                     <img src="assets/auna_logo.png" alt="Auna Pro Logo">
+                     <img src="assets/denver_logo.png" alt="Denver Logo">
+                     <img src="assets/behringer_logo.png" alt="Behringer Logo">
+                     <img src="assets/auna_logo.png" alt="Auna Pro Logo">
+                     <img src="assets/denver_logo.png" alt="Denver Logo">
+                     <img src="assets/behringer_logo.png" alt="Behringer Logo">
+                     <img src="assets/auna_logo.png" alt="Auna Pro Logo">
+                     <img src="assets/denver_logo.png" alt="Denver Logo">
+                 </div>
+             </div>
+         </section>
+
+    </main>
+
+    <footer>
+        <p>© <span id="godina"></span> Zvuk by Marko. Sva prava pridržana.</p>
+    </footer>
+
+    <script>
+        document.getElementById('godina').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
